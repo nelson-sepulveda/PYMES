@@ -13,7 +13,8 @@
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/owl.carousel.css">
         <link rel="stylesheet" href="css/nivo-lightbox.css">
-         <link rel="stylesheet" href="css/jquery.countdown.css">
+        <link rel="stylesheet" href="css/jquery.countdown.css">
+        
 
         <link rel="stylesheet" href="css/bootstrap-theme.min.css">
         <link rel="stylesheet" href="css/bootstrap.min.css">
@@ -22,12 +23,19 @@
         <!-- Color CSS -->
         <link rel="stylesheet" href="css/colors/blue.css">
 
+        <!--<link rel="stylesheet" href="css/remodal.css">-->
+        <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+
         <!-- DARK CSS-->
         <!--        <link rel="stylesheet" href="css/dark.css">-->
 
         <link rel="stylesheet" href="css/responsive.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
-    <script type="text/javascript" src="http://cdn.syndication.twimg.com/widgets/timelines/569000074533814272?&amp;lang=en&amp;callback=twitterFetcher.callback&amp;suppress_response_codes=true&amp;rnd=0.0755648378864513"></script><style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style></head>
+    <!--<script type="text/javascript" src="http://cdn.syndication.twimg.com/widgets/timelines/569000074533814272?&amp;lang=en&amp;callback=twitterFetcher.callback&amp;suppress_response_codes=true&amp;rnd=0.0755648378864513"></script>-->
+    
+    <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
+    
+    </head>
     <body data-spy="scroll" data-target="#main-navbar">
 
 
@@ -50,8 +58,8 @@
                         </div>  <!--end navbar-header -->
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <a href="#" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
-                            <a href="#" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>
+                            <a data-toggle="modal" data-target="#myModalRegistro" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
+                            <a data-toggle="modal" data-target="#myModal" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>
                             <ul class="nav navbar-nav navbar-left">
                                 <li><a href="#home" style="outline: none; cursor: default;">Inicio</a></li>
                                 <li><a href="#service" style="outline: none; cursor: default;">Novedades</a></li>
@@ -60,15 +68,20 @@
 
                         </div>  <!--end collapse -->
                     </div>  <!--end container -->
+
                 </nav>
             </header><!--/-->
 
+            
 
+            <?php include('modals.php'); ?>
+   
             <!--home section-->
 
 
             <!-- if you like to use surface. change class="home" to class="surface"-->
             <section id="home" class="home">
+            
 
                 <!-- <div id="surface"></div>-->
                 <!-- <canvas id="canvas"></canvas>-->
@@ -235,9 +248,9 @@
             </footer>
             </div>
 
-
-
-        <!--        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>-->
+        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+        <!--<script src="js/remodal.min.js"></script>-->
+        <!--<script src="js/twitterFetcher_min.js"></script>-->
         <script src="js/vendor/jquery-1.10.2.min.js"></script>
         <script type="text/javascript" src="js/bootstrap.min.js"></script>
         <script src="js/plugins.js"></script>
@@ -251,13 +264,18 @@
         <script src="js/jquery.wow.min.js"></script>
         <script src="js/nivo-lightbox.min.js"></script>
         <script src="js/jquery-contact.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script src="js/jquery.validate.js"></script>
+        <script src="js/app.js"></script>    
+        <!--<script src="http://cdnjs.cloudflare.com/ajax/libs/waypoints/2.0.3/waypoints.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js"></script>-->
         <script src="js/jquery.easypiechart.min.js"></script>
-        <script type="text/javascript" src="js/twitterFetcher_min.js"></script>
+        <!--<script type="text/javascript" src="js/twitterFetcher_min.js"></script>-->
         <script src="js/jquery.countdown.min.js"></script>
         <script src="js/main.js"></script>
-
+        
+        
+        
 
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

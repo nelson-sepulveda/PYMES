@@ -284,7 +284,7 @@ function handleTweets(tweets) {
     });
 }
 
-twitterFetcher.fetch(xs_tweet);
+// twitterFetcher.fetch(xs_tweet);
 
 
 
