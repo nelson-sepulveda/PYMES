@@ -1,4 +1,12 @@
 
+$(document).ready(function()
+{
+	$('.nombre-perfil').on('click', function()
+	{
+		$('.submenu-hijo').slideToggle('slow');
+	});
+});
+
 
 
 // Registro de clientes
@@ -40,6 +48,7 @@ submitHandler: function(form){
 				$('#cedula').val('')
 				$('#password').val('')
 				$('#password_re').val('')
+				$('#myModalRegistro').modal('hide')
 			}
 		});
  }
@@ -84,4 +93,45 @@ success : function(data)
 });
 }
 });
+
+
+// Actualizacion de dato cliente
+
+$('#actualizacionCliente').validate({
+	rules:{
+		user_up :{required:true },
+		email_up:{required:true,email:true},
+		direccion_up:{required:true},
+		telefono_up:{required:true,number:true},
+		cedula_up:{required:true},
+		password_up:{required:true}
+		
+	},
+	messages:
+	{
+		user_up: "Nombre Vacio",
+		email_up : "Email vacio o invalido",
+		direccion_up : "Direccion vacia",
+		telefono_up : "Telefono Vacio",
+		cedula_up : "Cedula Vacia",
+		password_up : "Contraseña Vacia"
+	},
+submitHandler: function(form){
+	
+		var formulario = $('#actualizacionCliente');	
+
+		$.ajax({
+			url: $('#actualizacionCliente').attr('action'),
+			method:'post',
+			data:$('#actualizacionCliente').serialize(),
+			success : function(data)
+			{
+				$('#data_update_ajax').html(data);
+				// $('#myModalActualizacion').modal('hide')
+			}
+		});
+ }
+});
+
+
 

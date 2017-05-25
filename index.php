@@ -54,7 +54,7 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a href="index.html" class="navbar-brand top-logo" style="outline: none; cursor: default;"><img src="images/app_block.jpg" alt="logo" style="outline: none; cursor: default;"></a>
+                            <a href="" class="navbar-brand top-logo" style="outline: none; cursor: default;"><img src="images/app_block.jpg" alt="logo" style="outline: none; cursor: default;"></a>
                         </div>  <!--end navbar-header -->
 
                         <div class="collapse navbar-collapse" id="navbar-collapse">

@@ -1,3 +1,12 @@
+<?php 
+  session_start();  
+  if(!$_SESSION)
+  {
+      header('Location:index.php');
+  }
+  include('page_part/datos_usuario.php');   
+?>
+
 <html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -57,24 +66,33 @@
                             <a href="index.html" class="navbar-brand top-logo" style="outline: none; cursor: default;"><img src="images/app_block.jpg" alt="logo" style="outline: none; cursor: default;"></a>
                         </div>  <!--end navbar-header -->
 
-                        <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <!--<a data-toggle="modal" data-target="#myModalRegistro" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
-                            <a data-toggle="modal" data-target="#myModal" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>-->
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a href="#home" style="outline: none; cursor: default;">Inicio</a></li>
-                                <li><a href="#service" style="outline: none; cursor: default;">Novedades</a></li>
-                                <li><a href="#contact">Contactanos</a></li>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <!--<a data-toggle="modal" data-target="#myModalRegistro" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
+                    <a data-toggle="modal" data-target="#myModal" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>-->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#home" style="outline: none; cursor: default;">Inicio</a></li>
+                        <li><a href="#service" style="outline: none; cursor: default;">Novedades</a></li>
+                        <li><a href="#contact" style="outline: none; cursor: default;">Contactanos</a></li>
+                        <!--<li><a href="#"><?php printf($_SESSION['nombre_cliente']); ?></a></li>-->
+                        <li class="nombre-perfil">
+                            <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre_cliente']; ?>
+                             <i class="caret"></i>
+                            </a>
+                            <ul class="submenu-hijo" style="display:none;">
+                             <li><a href="#" data-toggle="modal" data-target="#myModalActualizacion">Editar Perfil</a></li>
+                             <li><a href="page_part/desconectar.php">Salir</a></li>
                             </ul>
-
-                        </div>  <!--end collapse -->
-                    </div>  <!--end container -->
+                        </li>
+                    </ul>
+                </div>  <!--end collapse -->
+            </div>  <!--end container -->
 
                 </nav>
             </header><!--/-->
 
             
 
-            <?php include('modals.php'); ?>
+            <?php include('modal_actualizacion.php'); ?>
    
             <!--home section-->
 

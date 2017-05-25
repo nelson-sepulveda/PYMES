@@ -18,9 +18,11 @@ $usuario = $_POST['usuario'];
 $pass = $_POST['pass'];
 
 
-$sql = "SELECT email , password FROM CLIENTE WHERE '$usuario'=email AND '$pass'=password";
+$sql = "SELECT  id_cliente , nombre_cliente, email , password FROM CLIENTE WHERE '$usuario'=email AND '$pass'=password";
 $query_sql = mysqli_query($con,$sql);
 $vec = mysqli_fetch_row($query_sql); 
+
+
 
 if($vec==null || count($vec)==0)
 {
@@ -31,6 +33,8 @@ if($vec==null || count($vec)==0)
 }
 else
 {
+  $_SESSION['id_cliente'] = $vec[0];
+  $_SESSION['nombre_cliente'] = $vec[1];
   echo json_encode(array(
     'login'=>true
   ));
