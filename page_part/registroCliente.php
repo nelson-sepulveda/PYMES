@@ -20,7 +20,7 @@
       $pass = $_POST['password'];
 
 
-      $sql = "INSERT INTO CLIENTE(id_cliente,nombre_cliente,telefono,direccion,cedula,password) VALUES('$cedula','$nombre','$telefono','$direccion','$cedula','$pass')";
+      $sql = "INSERT INTO CLIENTE(id_cliente,nombre_cliente,telefono,direccion,cedula,password,email) VALUES('$cedula','$nombre','$telefono','$direccion','$cedula','$pass','$email')";
 
       $query = mysqli_query($con , $sql);
 

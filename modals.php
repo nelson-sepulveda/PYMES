@@ -6,16 +6,17 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title" id="myModalLabel">Inicio Sesion</h4>
       </div>
+      <div id="div_error_login"> </div>
       <div class="modal-body">
-        <form id="loginData" method="post" action="">
+        <form id="loginData" method="post" action="page_part/login_usuario.php">
           <div class="modal-body">
               <div class="form-group">
                 <label for="codigo" class="control-label">Email:</label>
-                <input type="text" class="form-control" id="usuario" name="usuario"  maxlength="8" placeholder="Digite su Email">
+                <input type="text" class="form-control" id="usuario" name="usuario"   placeholder="Digite su Email">
               </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Contraseña:</label>
-                <input type="text" class="form-control" id="pass" name="pass"  maxlength="50" placeholder="Digite su contraseña">
+                <input type="text" class="form-control" id="pass" name="pass"  placeholder="Digite su contraseña">
             </div>
           </div>  
           <div class="modal-footer">
@@ -38,19 +39,19 @@
       </div>
       <div id="success"></div>
       <div class="modal-body">
-        <form id="registroCliente" method="post" action="registroCliente.php">
+        <form id="registroCliente" method="post" action="page_part/registroCliente.php">
           <div class="modal-body">
               <div class="form-group">
                 <label for="codigo" class="control-label">Nombre:</label>
-                <input type="text" class="form-control" id="user" name="user"  maxlength="8" placeholder="Nombre Cliente">
+                <input type="text" class="form-control" id="user" name="user"  placeholder="Nombre Cliente">
               </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Email:</label>
-                <input type="text" class="form-control" id="email" name="email"  maxlength="50" placeholder="Email Cliente">
+                <input type="text" class="form-control" id="email" name="email"  placeholder="Email Cliente">
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Direccion:</label>
-                <input type="text" class="form-control" id="direccion" name="direccion"  maxlength="50" placeholder="Direccion Cliente">
+                <input type="text" class="form-control" id="direccion" name="direccion"  placeholder="Direccion Cliente">
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Telefono:</label>
@@ -58,15 +59,15 @@
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Cedula:</label>
-                <input type="text" class="form-control" id="cedula" name="cedula"  maxlength="50" placeholder="Cedula">
+                <input type="text" class="form-control" id="cedula" name="cedula"  placeholder="Cedula">
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Contraseña:</label>
-                <input type="password" class="form-control" id="password" name="password"  maxlength="50" placeholder="Contraseña">
+                <input type="password" class="form-control" id="password" name="password"  placeholder="Contraseña">
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Rectificar Contraseña:</label>
-                <input type="password" class="form-control" id="password_re" name="password_re"  maxlength="50" placeholder="Repetir Contraseña">
+                <input type="password" class="form-control" id="password_re" name="password_re" placeholder="Repetir Contraseña">
             </div>
           </div>  
           <div class="modal-footer">

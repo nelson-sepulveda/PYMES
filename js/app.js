@@ -33,18 +33,19 @@ submitHandler: function(form){
 			success : function(data)
 			{
 				$('#success').html(data);
-				limpiarFormulario(formulario);
+				$('#user').val('')
+				$('#email').val('')
+				$('#direccion').val('')
+				$('#telefono').val('')
+				$('#cedula').val('')
+				$('#password').val('')
+				$('#password_re').val('')
 			}
 		});
  }
 });
 
 
-function limpiarFormulario(formulario)
-{
-	var inputs = document.formulario.getElementsByTagName("user");
-  inputs.value = "";
-}
 
 
 //  Login de usuarios
@@ -59,57 +60,28 @@ $('#loginData').validate({
 		pass: "Contraseña Vacia"
 	},
 submitHandler: function(form){
-	
-		var formulario = $('#registroCliente');	
-
-		$.ajax({
-			url: $('#registroCliente').attr('action'),
-			method:'post',
-			data:$('#registroCliente').serialize(),
-			success : function(data)
-			{
-				$('#success').html(data);
-				limpiarFormulario(formulario);
-			}
-		});
- }
+	var formulario = $('#loginData');	
+	//  $('#myModal').modal('hide');
+	//  document.location.href='usuario_perfil.php';
+$.ajax({
+	url: formulario.attr('action'),
+	method:'post',
+	data:formulario.serialize(),
+success : function(data)
+	{
+		var obj = JSON.parse(data);
+		if(obj.login==true)
+		{
+			document.location.href='usuario_perfil.php';
+		}
+		else
+		{
+			$('#div_error_login').html(obj.error);
+			$('#usuario').val('')
+			$('#pass').val('')
+		}
+	}
 });
-
-
-
-
-
-// Registro de Cliente
-// $("#registroCliente").submit(function (event)
-// {
-
-// 		event.preventDefault();
-// 		var form=$(this);
-
-    
-
-// 		// $.ajax({
-// 		// 	url: form.attr('action'),
-// 		// 	method: 'POST',
-// 		// 	data: form.serialize(),
-// 		// 	success: function (data)
-//     //     {
-
-// 		// 		if (data)
-//     //     {
-// 		// 			// $('.alerta-enviado').fadeIn('slow');
-// 		// 			$("#datos_ajax_datos").html(data);
-// 		// 			//
-// 		// 			// $('#nombre,#email,#asunto,#mensaje').val('');
-// 		// 		}
-// 		// 		else
-// 		// 		{
-// 		// 				// $('.alert-error').fadeOut('slow');
-// 		// 				// setTimeout(function () {
-// 		// 				// 		$('.alert-error').hide();
-// 		// 				// }, 10000);
-// 		// 		}
-// 		// 	}
-// 		});
-
+}
+});
 
