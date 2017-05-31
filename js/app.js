@@ -134,4 +134,23 @@ submitHandler: function(form){
 });
 
 
+// Permite saber si ya existe un email registrado en la base de datos
+$(document).ready(function() {    
+    $('#email').blur(function(){
+
+        $('#info').html('<img src="images/loader.gif" alt="" />').fadeOut(1000);
+
+        var username = $(this).val();        
+        var dataString = 'username='+username;
+				console.log(username);
+        $.ajax({
+            type: "POST",
+            url: "page_part/check_email_registro.php",
+            data: dataString,
+            success: function(data) {
+                $('#info').fadeIn(1000).html(data);
+            }
+        });
+    });              
+});
 

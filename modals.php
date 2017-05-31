@@ -48,6 +48,7 @@
             <div class="form-group">
                 <label for="nombre" class="control-label">Email:</label>
                 <input type="text" class="form-control" id="email" name="email"  placeholder="Email Cliente">
+                <div id="info"> </div>
             </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Direccion:</label>
