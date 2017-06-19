@@ -1,3 +1,12 @@
+<?php 
+  session_start();  
+  if(!$_SESSION)
+  {
+      header('Location:index.php');
+  }
+  include('page_part/datos_usuario.php');   
+?>
+
 <html><head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,6 +40,7 @@
 
         <link rel="stylesheet" href="css/responsive.css">
         <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    <!--<script type="text/javascript" src="http://cdn.syndication.twimg.com/widgets/timelines/569000074533814272?&amp;lang=en&amp;callback=twitterFetcher.callback&amp;suppress_response_codes=true&amp;rnd=0.0755648378864513"></script>-->
     
     <style id="fit-vids-style">.fluid-width-video-wrapper{width:100%;position:relative;padding:0;}.fluid-width-video-wrapper iframe,.fluid-width-video-wrapper object,.fluid-width-video-wrapper embed {position:absolute;top:0;left:0;width:100%;height:100%;}</style>
     
@@ -53,28 +63,40 @@
                                 <span class="icon-bar"></span>
                             </button>
 
-                            <a href="" class="navbar-brand top-logo" style="outline: none; cursor: default;"><img src="images/app_block.jpg" alt="logo" style="outline: none; cursor: default;"></a>
+                            <a href="administrar_perfil.php" class="navbar-brand top-logo" style="outline: none; cursor: default;"><img src="images/app_block.jpg" alt="logo" style="outline: none; cursor: default;"></a>
                         </div>  <!--end navbar-header -->
 
-                        <div class="collapse navbar-collapse" id="navbar-collapse">
-                            <a data-toggle="modal" data-target="#myModalRegistro" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
-                            <a data-toggle="modal" data-target="#myModal" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>
-                            <ul class="nav navbar-nav navbar-left">
-                                <li><a href="#home" style="outline: none; cursor: default;">Inicio</a></li>
-                                <li><a href="#service" style="outline: none; cursor: default;">Novedades</a></li>
-                                <li><a href="#contact">Contactanos</a></li>
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <!--<a data-toggle="modal" data-target="#myModalRegistro" class="btn btn-primary navbar-btn navbar-right" style="outline: none; cursor: default;">Registrate!</a>
+                    <a data-toggle="modal" data-target="#myModal" class="btn btn-default navbar-btn navbar-right" style="outline: none; cursor: default;"> Ingresar </a>-->
+                    <ul class="nav navbar-nav navbar-left">
+                        <li><a href="#home" style="outline: none; cursor: default;">Inicio</a></li>
+                        <li><a href="#service" style="outline: none; cursor: default;">Novedades</a></li>
+                        <li><a href="#contact" style="outline: none; cursor: default;">Contactanos</a></li>
+                        <!--<li><a href="#"><?php printf($_SESSION['nombre_cliente']); ?></a></li>-->
+                        <li class="nombre-perfil">
+                            <a class=".perfil"  href="#" style=""><?php echo $_SESSION['nombre_admin']; ?>
+                             <i class="caret"></i>
+                            </a>
+                            <ul class="submenu-hijo" style="display:none;">
+                             <li><a href="#" data-toggle="modal" data-target="#actualizacion_admin">Editar Perfil</a></li>
+                             <li><a href="#" data-toggle="modal" data-target="#registroEmp">Registro Empleado</a></li>
+                             <li><a href="#" data-toggle="modal" data-target="#registroProducto">Registro Producto</a></li>
+                             <li><a href="empleados_pymes.php">Empleados</a></li>
+                             <li><a href="">Salir</a></li>
                             </ul>
-
-                        </div>  <!--end collapse -->
-                    </div>  <!--end container -->
+                        </li>
+                    </ul>
+                </div>  <!--end collapse -->
+            </div>  <!--end container -->
 
                 </nav>
             </header><!--/-->
 
             
-
-            <?php include('modals.php'); ?>
-   
+            <?php include('modal/modal_empleado.php'); ?>
+            <?php include('modal/modal_administrador.php'); ?>
+            <?php  include('modal/registro_producto.php'); ?>
             <!--home section-->
 
 
@@ -101,9 +123,9 @@
                                     </h3>
 
                                     <!--DOWNLOAD BUTTON -->
-                                    <div class="download-button">
+                                    <!--<div class="download-button">
                                         <a href="#" class="btn btn-default download-btn">Como funcionamos?<i class="fa fa-lg" style="outline: none; cursor: default;"></i></a>
-                                    </div>
+                                    </div>-->
                                 </div>
 
                             </div>
