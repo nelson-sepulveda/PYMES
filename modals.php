@@ -16,7 +16,7 @@
               </div>
             <div class="form-group">
                 <label for="nombre" class="control-label">Contraseña:</label>
-                <input type="text" class="form-control" id="pass" name="pass"  placeholder="Digite su contraseña">
+                <input type="password" class="form-control" id="pass" name="pass"  placeholder="Digite su contraseña">
             </div>
           </div>  
           <div class="modal-footer">

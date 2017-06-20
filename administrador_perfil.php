@@ -83,7 +83,7 @@
                              <li><a href="#" data-toggle="modal" data-target="#registroEmp">Registro Empleado</a></li>
                              <li><a href="#" data-toggle="modal" data-target="#registroProducto">Registro Producto</a></li>
                              <li><a href="empleados_pymes.php">Empleados</a></li>
-                             <li><a href="">Salir</a></li>
+                             <li><a href="page_part/desconectar.php">Salir</a></li>
                             </ul>
                         </li>
                     </ul>
@@ -117,11 +117,10 @@
                             <div class="col-md-offset-1 col-md-10">
                                 <div class="home-intro">
                                     <!--Header text -->
-                                    <h1>Proyecto PYMES</h1>
+                                    <h1>Bienvenido!</h1>
                                     <h3>
-                                          Diseño para el proyecto de bases de datos     
+                                          Podras organizar los diferentes productos    
                                     </h3>
-
                                     <!--DOWNLOAD BUTTON -->
                                     <!--<div class="download-button">
                                         <a href="#" class="btn btn-default download-btn">Como funcionamos?<i class="fa fa-lg" style="outline: none; cursor: default;"></i></a>
